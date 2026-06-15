@@ -1,0 +1,76 @@
+{
+  "emotions": [
+    {
+      "id": 0,
+      "name": "Joie",
+      "description": "La chaleur d'un souvenir heureux qui illumine l'esprit",
+      "rarity": "common",
+      "color": "#FFD700",
+      "icon": "☀",
+      "sanctuary_bonus": "Les éléments de Joie accélèrent la croissance des fleurs voisines"
+    },
+    {
+      "id": 1,
+      "name": "Nostalgie",
+      "description": "L'écho doux-amer d'un moment qui ne reviendra plus",
+      "rarity": "uncommon",
+      "color": "#9B7CB8",
+      "icon": "☽",
+      "sanctuary_bonus": "Les éléments de Nostalgie activent les lumières crépusculaires"
+    },
+    {
+      "id": 2,
+      "name": "Colère",
+      "description": "Le feu d'une injustice ressentie, forgeant la détermination",
+      "rarity": "common",
+      "color": "#FF4444",
+      "icon": "⚡",
+      "sanctuary_bonus": "Les éléments de Colère alimentent les sources de lumière"
+    },
+    {
+      "id": 3,
+      "name": "Sérénité",
+      "description": "Le calme profond d'un esprit en paix avec ses souvenirs",
+      "rarity": "uncommon",
+      "color": "#87CEEB",
+      "icon": "☯",
+      "sanctuary_bonus": "Les éléments de Sérénité apaisent les eaux du sanctuaire"
+    },
+    {
+      "id": 4,
+      "name": "Émerveillement",
+      "description": "L'éblouissement face à la beauté inattendue d'un souvenir",
+      "rarity": "rare",
+      "color": "#00CED1",
+      "icon": "✦",
+      "sanctuary_bonus": "Les éléments d'Émerveillement révèlent des cristaux cachés"
+    },
+    {
+      "id": 5,
+      "name": "Mélancolie",
+      "description": "La beauté triste d'un souvenir qui se dérobe lentement",
+      "rarity": "uncommon",
+      "color": "#708090",
+      "icon": "☂",
+      "sanctuary_bonus": "Les éléments de Mélancolie font pousser les arbres anciens"
+    },
+    {
+      "id": 6,
+      "name": "Courage",
+      "description": "La force de revivre les souvenirs les plus difficiles",
+      "rarity": "rare",
+      "color": "#FF8C00",
+      "icon": "⚔",
+      "sanctuary_bonus": "Les éléments de Courage déverrouillent les passages secrets"
+    },
+    {
+      "id": 7,
+      "name": "Espoir",
+      "description": "La promesse dorée que chaque mémoire peut être sauvée",
+      "rarity": "rare",
+      "color": "#FFFACD",
+      "icon": "✧",
+      "sanctuary_bonus": "Les éléments d'Espoir illuminent le sanctuaire entier"
+    }
+  ]
+}

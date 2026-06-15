@@ -1,0 +1,156 @@
+{
+  "items": [
+    {
+      "id": "tree_joy",
+      "type": "tree",
+      "name": "Arbre Lumineux",
+      "description": "Un arbre qui brille d'une lumière dorée, nourri par la joie des souvenirs",
+      "emotion_required": 0,
+      "emotion_cost": 3,
+      "growth_time_hours": [1, 4, 12],
+      "dust_per_hour": 1
+    },
+    {
+      "id": "flower_nostalgia",
+      "type": "flower",
+      "name": "Fleur Crépusculaire",
+      "description": "Une fleur qui ne s'ouvre qu'au crépuscule, porteuse de souvenirs tendres",
+      "emotion_required": 1,
+      "emotion_cost": 3,
+      "growth_time_hours": [1, 3, 8],
+      "dust_per_hour": 1
+    },
+    {
+      "id": "crystal_anger",
+      "type": "crystal",
+      "name": "Cristal Volcanique",
+      "description": "Un cristal forgé dans la chaleur de la passion et de la détermination",
+      "emotion_required": 2,
+      "emotion_cost": 3,
+      "growth_time_hours": [1, 4, 12],
+      "dust_per_hour": 1
+    },
+    {
+      "id": "water_serenity",
+      "type": "water_feature",
+      "name": "Fontaine Sereine",
+      "description": "Une fontaine dont l'eau apaise l'esprit et clarifie les souvenirs",
+      "emotion_required": 3,
+      "emotion_cost": 4,
+      "growth_time_hours": [2, 5, 14],
+      "dust_per_hour": 2
+    },
+    {
+      "id": "light_wonder",
+      "type": "light_source",
+      "name": "Orbe d'Émerveillement",
+      "description": "Une lumière mystérieuse qui révèle les secrets du sanctuaire",
+      "emotion_required": 4,
+      "emotion_cost": 5,
+      "growth_time_hours": [2, 6, 16],
+      "dust_per_hour": 2
+    },
+    {
+      "id": "tree_melancholy",
+      "type": "tree",
+      "name": "Saule Pleureur",
+      "description": "Un arbre ancien dont les branches tombantes abritent les souvenirs fragiles",
+      "emotion_required": 5,
+      "emotion_cost": 4,
+      "growth_time_hours": [2, 5, 14],
+      "dust_per_hour": 2
+    },
+    {
+      "id": "crystal_courage",
+      "type": "crystal",
+      "name": "Cristal de Bravoure",
+      "description": "Un cristal incassable, symbole de la force face aux souvenirs difficiles",
+      "emotion_required": 6,
+      "emotion_cost": 5,
+      "growth_time_hours": [2, 6, 16],
+      "dust_per_hour": 2
+    },
+    {
+      "id": "light_hope",
+      "type": "light_source",
+      "name": "Phare d'Espoir",
+      "description": "Une lumière qui perce toute obscurité, guide des âmes perdues vers leurs souvenirs",
+      "emotion_required": 7,
+      "emotion_cost": 6,
+      "growth_time_hours": [3, 8, 20],
+      "dust_per_hour": 3
+    },
+    {
+      "id": "decoration_generic",
+      "type": "decoration",
+      "name": "Pierre de Mémoire",
+      "description": "Une pierre gravée de motifs anciens, ancre du sanctuaire",
+      "emotion_required": -1,
+      "emotion_cost": 1,
+      "growth_time_hours": [0, 1, 4],
+      "dust_per_hour": 0
+    },
+    {
+      "id": "flower_generic",
+      "type": "flower",
+      "name": "Fleur Sauvage",
+      "description": "Une fleur simple qui pousse spontanément, témoin de la vie qui persiste",
+      "emotion_required": -1,
+      "emotion_cost": 1,
+      "growth_time_hours": [0, 1, 3],
+      "dust_per_hour": 0
+    }
+  ],
+  "biomes": [
+    {
+      "id": "meadow",
+      "name": "Prairie des Souvenirs",
+      "level_required": 1,
+      "bg_color_top": "#1a1a2e",
+      "bg_color_bottom": "#16213e",
+      "accent_color": "#4ade80",
+      "particle_color": "#86efac",
+      "description": "Une prairie douce où les premiers souvenirs repoussent comme l'herbe au printemps"
+    },
+    {
+      "id": "forest",
+      "name": "Forêt des Échos",
+      "level_required": 5,
+      "bg_color_top": "#0d1b0e",
+      "bg_color_bottom": "#1a3a1c",
+      "accent_color": "#22c55e",
+      "particle_color": "#4ade80",
+      "description": "Une forêt ancienne où chaque arbre murmure un souvenir oublié"
+    },
+    {
+      "id": "cavern",
+      "name": "Caverne des Cristaux",
+      "level_required": 12,
+      "bg_color_top": "#1a0a2e",
+      "bg_color_bottom": "#2d1b4e",
+      "accent_color": "#a78bfa",
+      "particle_color": "#c4b5fd",
+      "description": "Des profondeurs émergent des cristaux qui préservent les mémoires les plus précieuses"
+    },
+    {
+      "id": "ocean",
+      "name": "Océan de la Conscience",
+      "level_required": 20,
+      "bg_color_top": "#0a1628",
+      "bg_color_bottom": "#1e3a5f",
+      "accent_color": "#38bdf8",
+      "particle_color": "#7dd3fc",
+      "description": "Les flots immenses de la conscience, où les souvenirs flottent comme des îles"
+    },
+    {
+      "id": "cosmos",
+      "name": "Cosmos Intérieur",
+      "level_required": 30,
+      "bg_color_top": "#050510",
+      "bg_color_bottom": "#0f0f2e",
+      "accent_color": "#fbbf24",
+      "particle_color": "#fde68a",
+      "description": "L'infini de ta mémoire, où chaque étoile est un souvenir reconstruit"
+    }
+  ]
+}

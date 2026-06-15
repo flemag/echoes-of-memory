@@ -1,0 +1,94 @@
+{
+  "memories": [
+    {
+      "id": "mem_001",
+      "title": "Le Premier Sourire",
+      "level_unlock": 1,
+      "biome": "meadow",
+      "narrative": "Il y avait une fois un sourire si pur qu'il illumina le monde entier. Tu ne t'en souvenais plus, mais il était là, enfoui sous les couches du temps.",
+      "emotion": 0,
+      "sequence_hint": "Rouge, Bleu, Vert — les couleurs d'un matin joyeux"
+    },
+    {
+      "id": "mem_002",
+      "title": "L'Adieu Provisoire",
+      "level_unlock": 3,
+      "biome": "meadow",
+      "narrative": "Chaque au revoir porte en lui la promesse d'un retour. Mais certains adieux s'attardent, comme un écho qui refuse de s'éteindre.",
+      "emotion": 1,
+      "sequence_hint": "Violet, Jaune — les teintes du crépuscule"
+    },
+    {
+      "id": "mem_003",
+      "title": "L'Orage Intérieur",
+      "level_unlock": 5,
+      "biome": "forest",
+      "narrative": "La colère est un orage qui passe, laissant derrière lui un sol plus fertile. Ces éclairs de rage étaient nécessaires pour fendre la terre aride de l'oubli.",
+      "emotion": 2,
+      "sequence_hint": "Rouge, Rouge, Orange — la foudre frappe deux fois"
+    },
+    {
+      "id": "mem_004",
+      "title": "Le Lac Calme",
+      "level_unlock": 8,
+      "biome": "forest",
+      "narrative": "Sous la surface agitée de tes pensées, il existe un lac où tout est calme. Les souvenirs s'y reflètent sans distorsion, parfaits et éternels.",
+      "emotion": 3,
+      "sequence_hint": "Bleu, Vert, Bleu — le rythme des vagues"
+    },
+    {
+      "id": "mem_005",
+      "title": "L'Étoile Tombée",
+      "level_unlock": 12,
+      "biome": "cavern",
+      "narrative": "Une étoile est tombée du ciel de tes souvenirs, traçant un arc de lumière dans l'obscurité. Même dans les profondeurs, sa lumière persiste.",
+      "emotion": 4,
+      "sequence_hint": "Vert, Jaune, Violet, Jaune — l'arc-en-ciel inversé"
+    },
+    {
+      "id": "mem_006",
+      "title": "La Pluie Douce",
+      "level_unlock": 15,
+      "biome": "cavern",
+      "narrative": "Il pleuvait doucement ce jour-là. Les gouttes dessinaient des motifs sur la vitre, comme des souvenirs qui cherchent leur place dans le puzzle de l'esprit.",
+      "emotion": 5,
+      "sequence_hint": "Bleu, Violet, Bleu, Orange — la pluie et son contraste"
+    },
+    {
+      "id": "mem_007",
+      "title": "Le Pont Brisé",
+      "level_unlock": 20,
+      "biome": "ocean",
+      "narrative": "Le pont entre ce que tu étais et ce que tu es devenu s'est brisé il y a longtemps. Mais traverser les débris demande un courage que peu possèdent.",
+      "emotion": 6,
+      "sequence_hint": "Orange, Rouge, Vert, Rouge, Orange — le feu au milieu"
+    },
+    {
+      "id": "mem_008",
+      "title": "L'Aube Nouvelle",
+      "level_unlock": 25,
+      "biome": "ocean",
+      "narrative": "Après la tempête, l'aube se lève toujours. Chaque souvenir reconstruit est une promesse que l'horizon existe encore, doré et infini.",
+      "emotion": 7,
+      "sequence_hint": "Jaune, Vert, Bleu, Violet, Jaune — l'arc-en-ciel complet"
+    },
+    {
+      "id": "mem_009",
+      "title": "La Constellation Perdue",
+      "level_unlock": 30,
+      "biome": "cosmos",
+      "narrative": "Dans le cosmos de ta mémoire, les étoiles se sont reconnectées. Ce qui semblait chaotique forme désormais une constellation magnifique — la carte de tout ce que tu as surmonté.",
+      "emotion": 4,
+      "sequence_hint": "Toutes les couleurs, dans l'ordre — le cosmos se dévoile"
+    },
+    {
+      "id": "mem_010",
+      "title": "L'Écho Final",
+      "level_unlock": 35,
+      "biome": "cosmos",
+      "narrative": "Tu as reconstruit ton passé fragment par fragment. Le dernier écho résonne non pas comme un souvenir, mais comme une vérité : tu es le maître de tes mémoires, et elles sont belles.",
+      "emotion": 7,
+      "sequence_hint": "Le souvenir ultime — aucune indication nécessaire"
+    }
+  ]
+}

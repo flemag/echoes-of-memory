@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; but it can also be edited via script.
+
+[application]
+
+config/name="Echoes of Memory"
+config/description="A narrative puzzle memory game - Simon Says meets emotional storytelling"
+config/version="1.0.0"
+config/tags=PackedStringArray("puzzle", "casual", "memory", "narrative")
+run/main_scene="res://scenes/main_menu/main_menu.tscn"
+config/features=PackedStringArray("4.3")
+
+[autoload]
+
+SaveManager="*res://scripts/global/save_manager.gd"
+GameManager="*res://scripts/global/game_manager.gd"
+AudioManager="*res://scripts/global/audio_manager.gd"
+SceneManager="*res://scripts/global/scene_manager.gd"
+CollectionManager="*res://scripts/collection/collection_manager.gd"
+SanctuaryManager="*res://scripts/sanctuary/sanctuary_manager.gd"
+IdleGrowth="*res://scripts/sanctuary/idle_growth.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+window/handheld/orientation=1
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[input]
+
+tap={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":1,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventScreenTouch,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"index":0,"position":Vector2(0, 0),"pressed":true,"double_click":false,"script":null)
+]
+}
+ui_back={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Default"
+2d_physics/layer_2="UI"
+2d_physics/layer_3="Memory Nodes"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
