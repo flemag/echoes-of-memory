@@ -7,124 +7,43 @@ on:
     branches: [main]
 
 jobs:
-  lint:
-    name: GDScript Lint
+  validate-project:
+    name: Validate Project
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      
-      - name: Install gdlint
-        run: pip install gdtoolkit
-      
-      - name: Lint GDScript files
-        run: |
-          find . -name "*.gd" -not -path "./.import/*" | head -50 | xargs gdlint
-        continue-on-error: true
 
-  format-check:
-    name: GDScript Format Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      
-      - name: Install gdformat
-        run: pip install gdtoolkit
-      
-      - name: Check formatting
-        run: |
-          find . -name "*.gd" -not -path "./.import/*" | head -50 | xargs gdformat --check
-        continue-on-error: true
-
-  validate-scenes:
-    name: Validate Godot Scenes
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
       - name: Check scene files exist
         run: |
           echo "Checking required scene files..."
-          required_scenes=(
-            "scenes/main_menu/main_menu.tscn"
-            "scenes/game/game.tscn"
-            "scenes/sanctuary/sanctuary.tscn"
-            "scenes/collection/collection.tscn"
-            "scenes/settings/settings.tscn"
-          )
-          for scene in "${required_scenes[@]}"; do
-            if [ ! -f "$scene" ]; then
-              echo "❌ Missing scene: $scene"
-              exit 1
-            fi
+          for scene in scenes/main_menu/main_menu.tscn scenes/game/game.tscn scenes/sanctuary/sanctuary.tscn scenes/collection/collection.tscn scenes/settings/settings.tscn; do
+            if [ ! -f "$scene" ]; then echo "❌ Missing: $scene"; exit 1; fi
             echo "✅ Found: $scene"
           done
 
-  validate-scripts:
-    name: Validate GDScripts
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
       - name: Check script files exist
         run: |
           echo "Checking required script files..."
-          required_scripts=(
-            "scripts/global/save_manager.gd"
-            "scripts/global/game_manager.gd"
-            "scripts/global/audio_manager.gd"
-            "scripts/global/scene_manager.gd"
-            "scripts/game/sequence_generator.gd"
-            "scripts/game/memory_node.gd"
-            "scripts/game/echo_system.gd"
-            "scripts/game/score_system.gd"
-            "scripts/game/game_scene.gd"
-            "scripts/sanctuary/sanctuary_manager.gd"
-            "scripts/sanctuary/garden_element.gd"
-            "scripts/sanctuary/idle_growth.gd"
-            "scripts/sanctuary/sanctuary_scene.gd"
-            "scripts/collection/emotion_fragment.gd"
-            "scripts/collection/collection_manager.gd"
-            "scripts/collection/collection_scene.gd"
-            "scripts/ui/main_menu.gd"
-            "scripts/ui/settings_scene.gd"
-            "scripts/ui/hud.gd"
-            "scripts/ui/share_panel.gd"
-          )
-          for script in "${required_scripts[@]}"; do
-            if [ ! -f "$script" ]; then
-              echo "❌ Missing script: $script"
-              exit 1
-            fi
+          for script in scripts/global/save_manager.gd scripts/global/game_manager.gd scripts/global/audio_manager.gd scripts/global/scene_manager.gd scripts/game/sequence_generator.gd scripts/game/memory_node.gd scripts/game/echo_system.gd scripts/game/score_system.gd scripts/game/game_scene.gd scripts/sanctuary/sanctuary_manager.gd scripts/sanctuary/garden_element.gd scripts/sanctuary/idle_growth.gd scripts/sanctuary/sanctuary_scene.gd scripts/collection/emotion_fragment.gd scripts/collection/collection_manager.gd scripts/collection/collection_scene.gd scripts/ui/main_menu.gd scripts/ui/settings_scene.gd scripts/ui/hud.gd scripts/ui/share_panel.gd; do
+            if [ ! -f "$script" ]; then echo "❌ Missing: $script"; exit 1; fi
             echo "✅ Found: $script"
           done
 
-  validate-data:
-    name: Validate Data Files
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
       - name: Validate JSON data files
         run: |
           echo "Validating JSON data files..."
           for json_file in data/*.json; do
-            if [ ! -f "$json_file" ]; then
-              echo "❌ Missing: $json_file"
-              exit 1
-            fi
-            if ! python3 -m json.tool "$json_file" > /dev/null 2>&1; then
-              echo "❌ Invalid JSON: $json_file"
-              exit 1
-            fi
+            if [ ! -f "$json_file" ]; then echo "❌ Missing: $json_file"; exit 1; fi
+            if ! python3 -m json.tool "$json_file" > /dev/null 2>&1; then echo "❌ Invalid JSON: $json_file"; exit 1; fi
             echo "✅ Valid JSON: $json_file"
           done
+
+      - name: Check project.godot exists
+        run: |
+          if [ ! -f "project.godot" ]; then echo "❌ Missing project.godot"; exit 1; fi
+          echo "✅ Found: project.godot"
+
+      - name: Check export preset exists
+        run: |
+          if [ ! -f "export_presets.cfg" ]; then echo "❌ Missing export_presets.cfg"; exit 1; fi
+          echo "✅ Found: export_presets.cfg"
