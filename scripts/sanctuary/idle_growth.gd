@@ -2,7 +2,6 @@
 ## When the player returns to the sanctuary after being away, this node
 ## calculates how much items have grown and how much memory dust was earned.
 extends Node
-class_name IdleGrowth
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -74,7 +73,7 @@ func calculate_offline_growth(last_timestamp: float) -> Dictionary:
         var dust_earned: int = 0
 
         # Iterate every sanctuary item and determine its new stage.
-        for item: Dictionary in SanctuaryManager._items.values():
+        for item: Dictionary in SanctuaryManager.get_items().values():
                 var placed: float = item["placed_time"]
                 var old_stage: int = item["growth_stage"]
                 var new_stage: int = _calculate_stage_from_time(placed, effective_time)
@@ -84,7 +83,7 @@ func calculate_offline_growth(last_timestamp: float) -> Dictionary:
 
         # Memory dust from radiant items (50 % rate already applied to time).
         var radiant_count: int = 0
-        for item: Dictionary in SanctuaryManager._items.values():
+        for item: Dictionary in SanctuaryManager.get_items().values():
                 if item["growth_stage"] >= 3:
                         radiant_count += 1
 

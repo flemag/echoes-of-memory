@@ -26,19 +26,27 @@ jobs:
 
       - name: Setup Godot export templates
         run: |
+          # The godot-ci image stores templates at /root/.local/share/godot/export_templates/
+          # We need to copy them to the CI user's home (~/.local/share/godot/export_templates/)
           mkdir -v -p ~/.local/share/godot/export_templates/
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable || true
-          ls ~/.local/share/godot/export_templates/ || echo "Templates location checked"
+          # The version directory inside the container is "4.3.stable"
+          cp -r /root/.local/share/godot/export_templates/4.3.stable ~/.local/share/godot/export_templates/4.3.stable || true
+          # Also try without .stable suffix in case the image uses a different naming
+          cp -r /root/.local/share/godot/export_templates/* ~/.local/share/godot/export_templates/ || true
+          echo "=== Templates found ==="
+          ls -la ~/.local/share/godot/export_templates/
+          echo "=== Inside 4.3.stable ==="
+          ls -la ~/.local/share/godot/export_templates/4.3.stable/ || echo "No 4.3.stable dir"
 
       - name: Import project resources
         run: |
-          godot --headless --import || true
-          sleep 2
+          godot --headless --import 2>&1 || true
+          sleep 3
 
       - name: Export to Web
         run: |
           mkdir -v -p builds/web
-          godot --headless --export-release "Web" builds/web/index.html
+          godot --headless --export-release "Web" builds/web/index.html 2>&1
           ls -la builds/web/
 
       - name: Upload artifact

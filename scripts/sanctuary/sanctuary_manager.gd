@@ -2,7 +2,6 @@
 ## Tracks placed items, calculates growth based on real-time elapsed hours,
 ## handles idle resource generation (memory dust), and serialises state for saving.
 extends Node
-class_name SanctuaryManager
 
 # ---------------------------------------------------------------------------
 # Enums & Constants
@@ -234,6 +233,10 @@ func load_sanctuary_data(data: Dictionary) -> void:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+## Public getter for the internal items dictionary.
+func get_items() -> Dictionary:
+        return _items
 
 ## Persist current state through the SaveManager autoload.
 func _save() -> void:

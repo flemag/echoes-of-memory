@@ -3,7 +3,6 @@
 ## later. Successfully completing an echo grants bonus XP. Echoes expire after
 ## 24 real hours, and the queue is capped at 5 entries.
 extends Node
-class_name EchoSystem
 
 ## ── Signals ──────────────────────────────────────────────────────────────────
 signal echo_available(echo_data: Dictionary)
@@ -155,16 +154,16 @@ func _purge_expired() -> void:
 
 ## Persist the echo queue to SaveManager.
 func _save_echo_queue() -> void:
-        var save: SaveManager = _get_save_manager()
+        var save = _get_save_manager()
         if save:
                 save.get_data()["echo_queue"] = echo_queue.duplicate(true)
 
 
 ## Load the echo queue from SaveManager on startup.
 func _load_echo_queue() -> void:
-        var save: SaveManager = _get_save_manager()
+        var save = _get_save_manager()
         if save:
-                var loaded = save.get_data().get("echo_queue", [])
+                var loaded: Variant = save.get_data().get("echo_queue", [])
                 if loaded is Array:
                         echo_queue.clear()
                         for entry in loaded:
@@ -177,8 +176,8 @@ func _load_echo_queue() -> void:
 
 
 ## Safely retrieve the SaveManager autoload.
-func _get_save_manager() -> SaveManager:
+func _get_save_manager() -> Node:
         var node := get_tree().root.get_node_or_null("SaveManager")
-        return node as SaveManager if node else null
+        return node if node else null
 
 #endregion

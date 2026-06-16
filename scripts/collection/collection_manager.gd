@@ -2,7 +2,6 @@
 ## Tracks quantities, enforces consumption rules for the sanctuary, and
 ## emits signals so UI can react to collection changes.
 extends Node
-class_name CollectionManager
 
 # ---------------------------------------------------------------------------
 # Signals
