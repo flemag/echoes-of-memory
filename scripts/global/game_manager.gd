@@ -210,7 +210,7 @@ func end_game() -> void:
         # Persist to SaveManager
         var save = _get_save_manager()
         if save:
-                var data := save.get_data()
+            var data: Dictionary = save.get_data()  # ← Ajouter le type
                 data["player_progress"]["total_score"] = total_score
                 data["player_progress"]["level"] = current_level
                 data["player_progress"]["xp"] = current_xp
