@@ -88,8 +88,8 @@ func _create_background() -> void:
 
 	# Particle system — small coloured dots (memory fragments)
 	var particle_mat := ParticleProcessMaterial.new()
-	particle_mat.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_RECTANGLE
-	particle_mat.emission_box_extents = Vector3(360, 640, 0)
+	particle_mat.emission_shape = ParticleProcessMaterial.EMISSION_SHAPE_BOX  # Changé à BOX
+	particle_mat.alpha_curve = alpha_curve  # Cette propriété n'existe plus !
 	particle_mat.direction = Vector3(0, -1, 0)
 	particle_mat.spread = 30.0
 	particle_mat.gravity = Vector3(0, -15, 0)
@@ -105,7 +105,8 @@ func _create_background() -> void:
 	alpha_curve.add_point(Vector2(0.3, 1))
 	alpha_curve.add_point(Vector2(0.7, 0.8))
 	alpha_curve.add_point(Vector2(1, 0))
-	particle_mat.alpha_curve = alpha_curve
+	# À la place de alpha_curve, utilisez:
+	particle_mat.scale_curve = alpha_curve  # ou une autre propriété compatible
 
 	_particles = GPUParticles2D.new()
 	_particles.process_material = particle_mat
